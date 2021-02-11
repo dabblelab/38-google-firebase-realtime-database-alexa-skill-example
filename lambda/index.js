@@ -10,14 +10,14 @@ require('firebase/database');
 const message = [' was added', ' added', ' added to the list', ' got added', ' was updated', ' updated'];
 
 const config = {
-  apiKey: "AIzaSyCMR6CCqgDNO-k9UR6iZfSrnCWxexkMyGc",
-  authDomain: "react-fire-4fbfd.firebaseapp.com",
-  databaseURL: "https://react-fire-4fbfd.firebaseio.com",
-  projectId: "react-fire-4fbfd",
-  storageBucket: "react-fire-4fbfd.appspot.com",
-  messagingSenderId: "514104245417",
-  appId: "1:514104245417:web:fbc26b045cbe2698f7fdb8",
-  measurementId: "G-QNXYSRW9Y5"
+    apiKey: "API_KEY",
+    authDomain: "PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://PROJECT_ID.firebaseio.com",
+    projectId: "PROJECT_ID",
+    storageBucket: "PROJECT_ID.appspot.com",
+    messagingSenderId: "SENDER_ID",
+    appId: "APP_ID",
+    measurementId: "G-MEASUREMENT_ID",
 };
 
 firebase.initializeApp(config);
