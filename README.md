@@ -1,5 +1,7 @@
-# 36-alexa-firebase-realtime-database-example-skill
+# 37-alexa-firebase-realtime-database-example-skill
 This template is built on top of Node.js SDK. This Skill template integrates with Firebase Realtime Database. Data is sent directly from an alexa skill to your database.
+
+[![Custom badge](https://img.shields.io/endpoint?url=https://badges-shields-io-88j4y07yzimq.runkit.sh)](https://deploy.dabble.dev/deploy/v2/h0zv1fepf7)
 
 #### Step 1  
 Navigate to your [Amazon Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) .
