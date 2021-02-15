@@ -6,18 +6,18 @@
 const Alexa = require('ask-sdk-core');
 const firebase = require('firebase/app');
 require('firebase/database');
-//require('firebase/auth');
-const message = [' was added', ' added', ' added to the list', ' got added', ' was updated', ' updated'];
+
+// PLEASE FILL IN YOUR VALUES INSIDE CONFIG OBJECT. REFER TO THIS TUTORIAL TO GET STARTED : 
 
 const config = {
-    apiKey: "API_KEY",
-    authDomain: "PROJECT_ID.firebaseapp.com",
-    databaseURL: "https://PROJECT_ID.firebaseio.com",
-    projectId: "PROJECT_ID",
-    storageBucket: "PROJECT_ID.appspot.com",
-    messagingSenderId: "SENDER_ID",
-    appId: "APP_ID",
-    measurementId: "G-MEASUREMENT_ID",
+   apiKey: "API_KEY",
+   authDomain: "PROJECT_ID.firebaseapp.com",
+   databaseURL: "https://PROJECT_ID.firebaseio.com",
+   projectId: "PROJECT_ID",
+   storageBucket: "PROJECT_ID.appspot.com",
+   messagingSenderId: "SENDER_ID",
+   appId: "APP_ID",
+   measurementId: "G-MEASUREMENT_ID",
 };
 
 firebase.initializeApp(config);
@@ -28,26 +28,11 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome, you can say Hello or Help. Which would you like to try?';
+        const speakOutput = 'Welcome! You can record your Mood right now. For example, say "Add cool" ';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const HelloWorldIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent';
-    },
-    handle(handlerInput) {
-        const speakOutput = 'Hello World!';
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
     }
 };
@@ -58,23 +43,57 @@ const InputIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'InputIntent';
     },
     async handle(handlerInput) {
-        const country = Alexa.getSlotValue(handlerInput.requestEnvelope, 'country')
+        const moodSlot = Alexa.getSlotValue(handlerInput.requestEnvelope, 'mood');
         let speakOutput = '';
-        console.log("Country Name: ",country);
         try{
             firebase.database().goOnline();
-            await database.ref('/Countries/' + country).set({
-            Best_Place: "Hello",
-            Food: "Pizza"
+            var current = new Date();
+            var date = current.toLocaleDateString();
+            var time = current.toLocaleTimeString();
+            await database.ref('/Moods/' + moodSlot).set({
+            TIME : time,
+            DATE : date 
         })
         firebase.database().goOffline();
-        //database.off();
-        //database.ref.onDisconnect().set("I disconnected!");  
-        const response = message[Math.floor(Math.random() * message.length)];
-            speakOutput = `${country}` + `${response}`
+        
+      if (moodSlot) {
+      let resolution = handlerInput.requestEnvelope.request.intent.slots.mood.resolutions.resolutionsPerAuthority[0];
+      if (resolution.status.code === "ER_SUCCESS_MATCH") {
+        let mood = resolution.values[0].value.id;
+        switch (mood) {
+          case "1":
+            speakOutput = `I just added your mood. But I'm very sorry to hear that you're feeling ${moodSlot}. You can always cheer up!`;
+            break;
+          case "2":
+            speakOutput = `Got it. I've added your mood to the list. You can try and relax to feel better!`;
+            break; 
+          case "3":
+            speakOutput = `I understand that you're ${moodSlot} right now & I've added that to your list. Watching a movie can help you get over this!`;
+            break;
+          case "4":
+            speakOutput = `Ah! You're ${moodSlot}. Okay! I'll not bother you now.`;
+            break;
+          case "5":
+            speakOutput = `That's good to hear! I've added this mood to the list`;
+            break;
+          case "6":
+            speakOutput = `wow!! I'm so glad to hear that. `;
+            break;
+          case "7":
+            speakOutput = `Amazing! If you're feeling ${moodSlot} then I bet you're having a great time now!`;
+            break;
+          case "8":
+            speakOutput = `Great! That made me ${moodSlot} too! Added this.`;
+            break;
+          default:
+            speakOutput = `Okay, i just added this.`;
+            break;
+        }
+        }
+        }
         }catch(e){
             console.log("Catch logs here: ",e);
-            speakOutput = `There was a problem adding the ${country}`
+            speakOutput = `There was a problem adding the ${moodSlot}`
         }
         console.log("Out of Try Catch");
         return handlerInput.responseBuilder
@@ -194,7 +213,6 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        HelloWorldIntentHandler,
         InputIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,

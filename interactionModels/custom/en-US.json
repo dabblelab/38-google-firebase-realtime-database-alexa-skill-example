@@ -16,19 +16,6 @@
           "samples": []
         },
         {
-          "name": "HelloWorldIntent",
-          "slots": [],
-          "samples": [
-            "hello",
-            "how are you",
-            "say hi world",
-            "say hi",
-            "hi",
-            "say hello world",
-            "say hello"
-          ]
-        },
-        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         },
@@ -40,19 +27,120 @@
           "name": "InputIntent",
           "slots": [
             {
-              "name": "country",
-              "type": "AMAZON.Country"
+              "name": "mood",
+              "type": "mood"
             }
           ],
           "samples": [
-            "add {country} to the collection",
-            "add {country} to the list",
-            "add {country}"
+            "My mood right now is {mood}",
+            "currently i am feeling {mood}",
+            "i am feeling {mood}",
+            "add {mood} to the list",
+            "add {mood}"
           ]
         }
       ],
-      "types": []
+      "types": [
+        {
+          "values": [
+            {
+              "id": "1",
+              "name": {
+                "value": "1",
+                "synonyms": [
+                  "lonely",
+                  "alone",
+                  "sad"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "2",
+                "synonyms": [
+                  "tense",
+                  "anxious",
+                  "tensed",
+                  "worried"
+                ]
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "3",
+                "synonyms": [
+                  "fearful",
+                  "afraid",
+                  "scared"
+                ]
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "4",
+                "synonyms": [
+                  "angry",
+                  "too angry",
+                  "very angry",
+                  "messed up"
+                ]
+              }
+            },
+            {
+              "id": "5",
+              "name": {
+                "value": "5",
+                "synonyms": [
+                  "cool",
+                  "ok",
+                  "calm",
+                  "silent",
+                  "quiet"
+                ]
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "6",
+                "synonyms": [
+                  "romantic",
+                  "lovely"
+                ]
+              }
+            },
+            {
+              "id": "7",
+              "name": {
+                "value": "7",
+                "synonyms": [
+                  "reflective",
+                  "confident",
+                  "perfect",
+                  "presentable"
+                ]
+              }
+            },
+            {
+              "id": "8",
+              "name": {
+                "value": "8",
+                "synonyms": [
+                  "cheerful",
+                  "excited",
+                  "glad",
+                  "happy"
+                ]
+              }
+            }
+          ],
+          "name": "mood"
+        }
+      ]
     }
   },
-  "version": "3"
+  "version": "10"
 }

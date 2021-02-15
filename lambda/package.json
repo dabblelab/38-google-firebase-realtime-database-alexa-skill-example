@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "firebase-realtime-database-alexa-skill-example",
   "version": "1.2.0",
   "description": "alexa utility for quickly building skills",
   "main": "index.js",
