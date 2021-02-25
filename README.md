@@ -19,10 +19,19 @@ Click on the "import skill" button, and copy the link to this Github Repo i.e - 
 Once Validation & Model Creation is done, Your skill would be ready.
 
 #### Step 6 
-Create a new Firebase Realtime Database & link it up in your alexa skill, using the configurations. Follow this [tutorial](https://youtu.be/qKxisFLQRpQ) to learn about this - 
+Create a new Firebase Realtime Database & link it up in your alexa skill, using the configurations. Follow this [tutorial](https://youtu.be/qKxisFLQRpQ) to learn the steps. 
 
 #### Step 7 
 Once, this is done, you've successfully covered all the steps to test this template. Hence, move to the test tab, and turn your skill mode from "Off" to "Development", and give it a test! 
+
+
+### Update:
+
+Link to Live Stream - [Using the Firebase Realtime Database in an Alexa Skill](https://youtu.be/M24yMEijRTQ)
+Link to Tutorials: 
+
+[Part 1 : Firebase Realtime Database Creation in 5 mins](https://youtu.be/qKxisFLQRpQ)
+[Part 2 : Integrate Firebase Realtime Database in an Alexa Skill](https://youtu.be/fI1bxMKMY5g)
 
 #### Testing Instructions:
 
