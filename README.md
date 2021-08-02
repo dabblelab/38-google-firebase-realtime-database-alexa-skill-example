@@ -1,46 +1,24 @@
-# 38-alexa-firebase-realtime-database-example-skill
-This template is built on top of Node.js SDK. This Skill template integrates with Firebase Realtime Database. Data is sent directly from an alexa skill to your database.
+![](https://raw.githubusercontent.com/dabblelab/38-alexa-firebase-realtime-database-example-skill/main/image.png)
 
-[![Custom badge](https://img.shields.io/endpoint?url=https://badges-shields-io-88j4y07yzimq.runkit.sh)](https://deploy.dabble.dev/deploy/v2/h0zv1fepf7)
+# Google Firebase Realtime Database - Alexa Skill Template
 
-#### Step 1  
-Navigate to your [Amazon Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) .
+This is an Alexa skill template that provides a starting point for creating a skill that uses the [Google Firebase Cloud Firestore DB](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjWw9OW-ZLyAhWLfisKHVo3Al8YABAAGgJzZg&ohost=www.google.com&cid=CAESQOD2pjK1GJ3HWI7-Ek_KDKQXxz6g4TI1dpGuqIBdl5BasiyttyI6QI3CNzM0DpTH6cKra4erweOUaqjr4OgZX7Q&sig=AOD64_0fI2QP070dW-4a0e7Flwynp9ng7w&q&adurl&ved=2ahUKEwjdpMyW-ZLyAhUQyDgGHcmZBfoQ0Qx6BAgCEAE) to receive data in it's cloud-hosted, NoSQL database from an Alexa Skill.
 
-#### Step 2 
-Click on New Skill
+### Using this skill template
 
-#### Step 3 
-Give your desired Skill name, for eg: Mood Bucket, Choose Custom Model, Choose Node.js SDK in methods.
+1. If you don't have one already, create an [Amazon Developer account](https://developer.amazon.com/).
 
-#### Step 4 
-Click on the "import skill" button, and copy the link to this Github Repo i.e - https://github.com/dabblelab/36-alexa-firebase-realtime-database-example-skill.git
+2. Click the button below to deploy the code for this skill into your Alexa developer account.
 
-#### Step 5 
-Once Validation & Model Creation is done, Your skill would be ready.
+   [![Custom badge](https://img.shields.io/endpoint?url=https://badges-shields-io-88j4y07yzimq.runkit.sh)](https://deploy.dabble.dev/deploy/v2/h0zv1fepf7)
 
-#### Step 6 
-Create a new Firebase Realtime Database & link it up in your alexa skill, using the configurations. Follow this [tutorial](https://youtu.be/qKxisFLQRpQ) to learn the steps. 
+3. In the Alexa developer console, set the skill's invocation name.
 
-#### Step 7 
-Once, this is done, you've successfully covered all the steps to test this template. Hence, move to the test tab, and turn your skill mode from "Off" to "Development", and give it a test! 
+4. Test the skill with an Alexa device that can play video.
+
+   > **NOTE:** You can test the skill in devices like: Echo Dot, Echo Show, Fire TV, some Fire tablets, and other devices.
+
+5. Modify the skill code to use your own stream URL.
 
 
-### Update:
 
-Link to Live Stream - [Using the Firebase Realtime Database in an Alexa Skill](https://youtu.be/M24yMEijRTQ)
-Link to Tutorials: 
-
-[Part 1 : Firebase Realtime Database Creation in 5 mins](https://youtu.be/qKxisFLQRpQ)
-[Part 2 : Integrate Firebase Realtime Database in an Alexa Skill](https://youtu.be/fI1bxMKMY5g)
-
-#### Testing Instructions:
-
-Alexa open Mood Bucket,
-Add Happy,
-I'm feeling cool,
-Currently I'm feeling Romantic
-Alexa Stop
-
-These were the basic steps to help you with the skill. If you wish to further use this for building a skill, you can manipulate the template accordingly. Further to this, if you have any questions, reach out to me at - sohini@dabblelab.com or on [Twitter](https://twitter.com/TheSohini)
-
-Thanks!
